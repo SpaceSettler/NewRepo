@@ -3,20 +3,39 @@
 /* Profile Object  */
 let myProfile = {
     name: "J",
-    photo: "C:\Users\jdevo\OneDrive\Documents\School Work\Intro to Javascript\cse121b\Wk 2\images\profile.png",
+    photo: "imgs/profile.png",
+    photoName: "Me",
     favoriteFoods: ["Pizza", "Coleslaw", "Rice", "Mayonnaise"],
     hobbbies: ["Golf", "Lounge", "Eat", "Bird Watching"],
     placesLived: [],
 };
 myProfile.placesLived.push(
     {
-        place: "35°29'50\"N 138°45'17\"E",
+        place: "35°29'50N 138°45'17E",
         length: "[REDACTED]"
     }
 );
 document.querySelector('#name').textContent = myProfile.name;
 document.querySelector('#photo').src = myProfile.photo;
-
+document.querySelector('#photo').alt = myProfile.photoName;
+myProfile.favoriteFoods.forEach(food => {
+    let li = document.createElement('li');
+    li.textContent = food;
+    document.querySelector('#favorite-foods').appendChild(li);
+});
+myProfile.hobbbies.forEach(food => {
+    let li = document.createElement('li');
+    li.textContent = food;
+    document.querySelector('#hobbies').appendChild(li);
+});
+myProfile.placesLived.forEach(food => {
+    let dt = document.createElement('dt');
+    dt.textContent = food.place;
+    document.querySelector('#places-lived').appendChild(dt);
+    let dd = document.createElement('dd');
+    dd.textContent = food.length;
+    document.querySelector('#places-lived').appendChild(dd);
+})
 
 /* Populate Profile Object with placesLive objects */
 
