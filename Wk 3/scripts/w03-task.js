@@ -26,7 +26,14 @@ function subtractNumbers() {
 
 document.querySelector('#subtractNumbers').addEventListener('click', subtractNumbers);
 
-const multiply = (number1, number2) => number1 * number2;gdfjkH0WIPJ2) => number1 / number2;
+const multiply = (number1, number2) => number1 * number2;
+
+const multiplyNumbers = () => document.querySelector('#product').value = multiply(Number(document.querySelector('#factor1').value), Number(document.querySelector('#factor2').value));
+
+document.querySelector('#multiplyNumbers').addEventListener('click', multiplyNumbers);
+
+/* Open Function Use - Divide Numbers */
+const divide = (number1, number2) => number1 / number2;
 
 function divideNumbers() {
     let divideNumber1 = Number(document.querySelector('#dividend').value);
